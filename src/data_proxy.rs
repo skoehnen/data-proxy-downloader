@@ -1,6 +1,6 @@
 pub struct Bucket {
-    token: String,
-    id: String
+    pub token: String,
+    pub id: String
 }
 
 pub fn test() {

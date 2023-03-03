@@ -1,11 +1,12 @@
 use std::io;
 use std::env;
-use std::cell::RefCell;
 
 mod data_proxy;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = env::args().collect(); 
+
+    let bucket_id = String::from(&args[1]);
 
     let mut token = String::new();
     println!("Please enter your token:");
@@ -13,7 +14,7 @@ fn main() {
     
     let bucket = data_proxy::Bucket{
         token: token,
-        id: args[1]
+        id: bucket_id
     };
 
     data_proxy::test();
