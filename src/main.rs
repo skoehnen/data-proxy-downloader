@@ -1,7 +1,13 @@
+use std::io;
+
 mod data_proxy;
 
 fn main() {
     println!("Hello, world!");
+    let stdin = io::stdin();
+    let mut user_input = String::new();
+    stdin.read_line(&mut user_input).unwrap();
+    println!("User input: {}", user_input);
     data_proxy::test();
     data_proxy::get_stat();
 }

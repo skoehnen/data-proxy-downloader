@@ -1,3 +1,8 @@
+struct Bucket {
+    token: String,
+    id: String
+}
+
 pub fn test() {
     println!("test called");
 }
