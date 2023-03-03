@@ -1,4 +1,4 @@
-struct Bucket {
+pub struct Bucket {
     token: String,
     id: String
 }
