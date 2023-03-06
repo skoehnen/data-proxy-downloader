@@ -3,6 +3,7 @@ use fstrings::format_args_f;
 
 use reqwest::blocking::Client;
 use reqwest::Error;
+use http::header::HeaderValue;
 
 pub struct Bucket {
     pub token: String,
@@ -22,12 +23,18 @@ pub fn get_stat(bucket: Bucket) {
 
     println!("{}", bucket.token);
 
-    let request = client
-        .get(stats_url)
-        .header(reqwest::header::AUTHORIZATION, String::from(bucket.token));
+    //let val = HeaderValue::from_str("Hallo Tim");
 
-    println!("{:?}", request);
-    dbg!(request);
+    let val = HeaderValue::from_str(&format!("Bearer {}", bucket.token.clone()));
+
+    dbg!(val);
+
+    //let request = client
+    //    .get(stats_url)
+    //    .header(reqwest::header::AUTHORIZATION, val);
+
+    //println!("{:?}", request);
+    //dbg!(request);
 
     //let response = request.send();
 

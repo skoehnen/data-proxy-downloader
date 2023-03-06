@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'data-proxy-downloader'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=data-proxy-downloader",
+                    "--package=data-proxy-downloader"
+                ],
+                "filter": {
+                    "name": "data-proxy-downloader",
+                    "kind": "bin"
+                }
+            },
+            "args": ["d-aaca9deb-6cea-4339-a221-254dffeedcda"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'data-proxy-downloader'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=data-proxy-downloader",
+                    "--package=data-proxy-downloader"
+                ],
+                "filter": {
+                    "name": "data-proxy-downloader",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
