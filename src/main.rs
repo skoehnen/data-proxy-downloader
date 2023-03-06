@@ -13,7 +13,7 @@ fn main() {
     io::stdin().read_line(&mut token).unwrap();
     
     let bucket = data_proxy::Bucket{
-        token: token,
+        token: token.trim().to_string(),
         id: bucket_id
     };
 

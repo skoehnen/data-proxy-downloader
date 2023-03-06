@@ -3,7 +3,7 @@ use fstrings::format_args_f;
 
 use reqwest::blocking::Client;
 use reqwest::Error;
-use http::header::HeaderValue;
+use reqwest::header::HeaderValue;
 
 pub struct Bucket {
     pub token: String,
