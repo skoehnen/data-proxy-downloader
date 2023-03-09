@@ -13,21 +13,21 @@ pub struct Bucket {
 }
 
 #[derive(Debug, Deserialize)]
-struct Status {
-    name: String,
-    objects_count: u64,
-    bytes: u64,
-    last_modified: String,
-    is_public: bool,
-    role: String,
-    is_initialized: bool,
+pub struct Status {
+    pub name: String,
+    pub objects_count: u64,
+    pub bytes: u64,
+    pub last_modified: String,
+    pub is_public: bool,
+    pub role: String,
+    pub is_initialized: bool,
 }
 
 pub fn test() {
     println!("test called");
 }
 
-pub fn get_stat(bucket: Bucket) {
+pub fn get_stat(bucket: Bucket) -> Status {
     println!("get_stat called");
 
     let stats_url = fstrings::f!("https://data-proxy.ebrains.eu/api/v1/buckets/{bucket.id}/stat");
@@ -51,5 +51,5 @@ pub fn get_stat(bucket: Bucket) {
     //dbg!(response.text());
     let status: Status = response.json::<Status>().unwrap();
 
-    dbg!(status);
+    return status;
 }

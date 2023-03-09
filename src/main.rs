@@ -18,5 +18,5 @@ fn main() {
     };
 
     data_proxy::test();
-    data_proxy::get_stat(bucket);
+    let status: data_proxy::Status = data_proxy::get_stat(bucket);
 }
