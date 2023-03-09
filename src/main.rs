@@ -13,10 +13,10 @@ fn main() {
     io::stdin().read_line(&mut token).unwrap();
     
     let bucket = data_proxy::Bucket{
-        token: token,
+        token: token.trim().to_string(),
         id: bucket_id
     };
 
     data_proxy::test();
-    data_proxy::get_stat(bucket);
+    let status: data_proxy::Status = data_proxy::get_stat(bucket);
 }
