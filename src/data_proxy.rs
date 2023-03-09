@@ -53,3 +53,7 @@ pub fn get_stat(bucket: Bucket) -> Status {
 
     return status;
 }
+
+pub fn get_object_list(bucket: Bucket) {
+    
+}
