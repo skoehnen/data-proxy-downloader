@@ -5,8 +5,9 @@ use reqwest::blocking::Client;
 //use reqwest::Error;
 //use reqwest::header::HeaderValue;
 
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize};
 
+#[derive(Clone)]
 pub struct Bucket {
     pub token: String,
     pub id: String
@@ -54,6 +55,8 @@ pub fn get_stat(bucket: Bucket) -> Status {
     return status;
 }
 
-pub fn get_object_list(bucket: Bucket) {
-    
+pub fn get_object_list(bucket: Bucket, status: Status) {
+    let object_list_url = fstrings::f!("https://data-proxy.ebrains.eu/api/v1/buckets/{bucket.id}?limit={status.objects_count}");
+
+    dbg!(object_list_url);
 }
