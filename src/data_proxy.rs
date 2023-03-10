@@ -69,7 +69,7 @@ pub fn get_stat(bucket: Bucket) -> Status {
     return status;
 }
 
-pub fn get_object_list(bucket: Bucket, status: Status) {
+pub fn get_object_list(bucket: Bucket, status: Status) -> ObjectList{
     let object_list_url = fstrings::f!("https://data-proxy.ebrains.eu/api/v1/buckets/{bucket.id}?limit={status.objects_count}");
 
     let client = Client::new();
@@ -82,4 +82,5 @@ pub fn get_object_list(bucket: Bucket, status: Status) {
 
     let object_list: ObjectList = response.json::<ObjectList>().unwrap();
 
+    return object_list;
 }
