@@ -82,5 +82,4 @@ pub fn get_object_list(bucket: Bucket, status: Status) {
 
     let object_list: ObjectList = response.json::<ObjectList>().unwrap();
 
-    dbg!(object_list.objects.len());
 }
