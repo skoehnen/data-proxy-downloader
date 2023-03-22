@@ -87,4 +87,5 @@ pub fn get_object_list(bucket: Bucket, status: Status) -> ObjectList{
 
 pub fn get_temp_url(bucket: Bucket, object_id: String) -> String {
     unimplemented!();
+    // https://data-proxy.ebrains.eu/api/v1/buckets/d-aaca9deb-6cea-4339-a221-254dffeedcda/POCO_YA%2Fdata%2Fbeh_data%2Fraw%2FZTB786_logfileEnc2_POCOYA.txt?inline=false&redirect=false
 }
