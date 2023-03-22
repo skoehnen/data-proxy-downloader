@@ -84,3 +84,7 @@ pub fn get_object_list(bucket: Bucket, status: Status) -> ObjectList{
 
     return object_list;
 }
+
+pub fn get_temp_url(bucket: Bucket, object_id: String) -> String {
+    unimplemented!();
+}
