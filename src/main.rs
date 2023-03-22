@@ -19,5 +19,7 @@ fn main() {
 
     data_proxy::test();
     let status: data_proxy::Status = data_proxy::get_stat(bucket.clone());
-    data_proxy::get_object_list(bucket, status);
+    let object_list = data_proxy::get_object_list(bucket, status);
+
+    dbg!(object_list);
 }
